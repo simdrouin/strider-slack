@@ -1015,14 +1015,17 @@ var basicTemplate = function(icon, message) {
 }
 
 module.exports = {
-  webhookURL: String,
+  webhookURL: {
+    type: String,
+    default: 'https://hooks.slack.com/services/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'
+  },
   channel: {
     type: String,
-    default: '#general'
+    default: '#build'
   },
   username: {
     type: String,
-    default: '<%= project.name %>'
+    default: '<%= project.name %> - <%= trigger.author.name %>'
   },
   icon_url: {
     type: String,
